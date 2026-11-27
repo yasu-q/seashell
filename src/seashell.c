@@ -16,6 +16,7 @@
 #define SEASHELL_TOK_DELIM " \t\r\n\a"
 
 char *help_msg =    "seashell\n\n"
+                    "for more information, see https://github.com/yasu-q/seashell\n\n"
                     "list of built-in commands:\n"
                     "   help\n"
                     "   cd [dir]\n"
@@ -129,7 +130,7 @@ char* seashell_cmdbuf_pop(seashell_cmdbuf *buf) {
     cmd = buf->cmds[buf->tail];
     buf->tail = (buf->tail + 1) % buf->capacity;
     buf->size -= 1;
-    
+
     return cmd;
 }
 
